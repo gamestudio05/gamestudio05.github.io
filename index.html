@@ -4,88 +4,147 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Game Studio 05 | Mobile games for Android</title>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-TTkpiu7VmJzlIJIToEE2RSGKJKx3FKjJg3OtOZBTOTg='; style-src 'self'; img-src 'self'; font-src 'self'; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="description" content="Game Studio 05 makes mobile games for Android: Summit Climb, a physics hill climb with a zombie horde, and Bleedoku, a colour-mixing puzzle.">
 <link rel="canonical" href="https://gamestudio05.github.io/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Game Studio 05">
 <meta property="og:title" content="Game Studio 05">
 <meta property="og:description" content="Mobile games for Android: Summit Climb and Bleedoku.">
 <meta property="og:url" content="https://gamestudio05.github.io/">
 <meta property="og:image" content="https://gamestudio05.github.io/assets/img/summit-social.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="An orange off-roader leaps a broken desert bridge ahead of a zombie horde">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#fbf7f2" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#15110e" media="(prefers-color-scheme: dark)">
+<meta name="twitter:title" content="Game Studio 05">
+<meta name="twitter:description" content="Mobile games for Android: Summit Climb and Bleedoku.">
+<meta name="twitter:image" content="https://gamestudio05.github.io/assets/img/summit-social.jpg">
+<meta name="theme-color" content="#0e0f11">
 <link rel="icon" href="/assets/img/summit-icon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/img/summit-icon-180.png">
-<link rel="preload" as="font" href="/assets/fonts/nunito-latin.woff2" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/site.css">
-<link rel="stylesheet" href="/assets/css/summit.css">
+<link rel="preload" as="font" href="/assets/fonts/russo-one.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="/assets/fonts/barlow-condensed-700.woff2" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/core.css">
+<link rel="stylesheet" href="/assets/css/game.css">
+<script src="/assets/js/summit.js" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Game Studio 05","url":"https://gamestudio05.github.io/","email":"gamestudio05.team@gmail.com","logo":"https://gamestudio05.github.io/assets/img/summit-icon-192.png"}</script>
 </head>
-<body class="summit">
+<body class="page-home">
 <a class="skip" href="#main">Skip to content</a>
-<header>
-<a class="sc-brand" href="/">
-<span>Game Studio 05<small>MOBILE GAMES</small></span>
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/" aria-label="Game Studio 05 home">
+<span class="studio-mark" aria-hidden="true">05</span>
+<span class="brand-text">Game Studio 05<small>Mobile games</small></span>
 </a>
-<nav aria-label="Main">
-<a href="#games">Games</a>
+<nav class="site-nav" aria-label="Main">
+<a href="#summit-climb">Summit Climb</a>
+<a href="#bleedoku">Bleedoku</a>
 <a href="#contact">Contact</a>
 </nav>
+</div>
 </header>
+
 <main id="main">
-<section class="hero wrap">
-<div>
-<p class="eyebrow">GAME STUDIO 05</p>
-<h1>Small studio.<br><em>Big runs.</em></h1>
-<p class="lead">We make mobile games for Android that are easy to pick up and hard to put down.</p>
-<div class="actions">
-<a class="button" href="/summit-climb/">Meet Summit Climb</a>
-</div>
-</div>
-<figure class="sc-art">
-<picture>
-<source type="image/avif" srcset="/assets/img/summit-feature-480.avif 480w, /assets/img/summit-feature-768.avif 768w, /assets/img/summit-feature-1024.avif 1024w" sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 1000px) 45vw, 560px">
-<source type="image/webp" srcset="/assets/img/summit-feature-480.webp 480w, /assets/img/summit-feature-768.webp 768w, /assets/img/summit-feature-1024.webp 1024w" sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 1000px) 45vw, 560px">
-<img src="/assets/img/summit-feature-768.jpg" width="1024" height="500" alt="Summit Climb: an off-roader races up a desert road ahead of a zombie horde" fetchpriority="high" decoding="async">
-</picture>
-<figcaption>Summit Climb: Outrun the Horde</figcaption>
-</figure>
-</section>
-<section class="section wrap" id="games">
-<div class="heading">
-<div>
-<p class="eyebrow">OUR GAMES</p>
-<h2>Free on Google Play.</h2>
-</div>
-</div>
-<ul class="sc-features">
-<li>
-<span class="tag">PHYSICS HILL CLIMB</span>
-<h3>Summit Climb: Outrun the Horde</h3>
-<p>16 vehicles, ten hand-built stages and a zombie horde that never gets tired.</p>
-<p><a href="/summit-climb/">About the game</a> &middot; <a href="/summit-climb/privacy/">Privacy</a></p>
-</li>
-<li>
-<span class="tag">COLOUR PUZZLE</span>
-<h3>Bleedoku: Colour Puzzle</h3>
-<p>Mix colours, set off BOOMs and bring a painted village back to life.</p>
-<p><a href="https://play.google.com/store/apps/details?id=com.bleedoku.game" rel="noopener noreferrer">Bleedoku on Google Play &#8599;</a></p>
-</li>
-</ul>
-</section>
-<section class="sc-contact wrap" id="contact">
-<div>
-<p class="eyebrow">CONTACT</p>
-<h2>Say hello.</h2>
-<p>Questions, bugs, ideas or business: we read every message.</p>
-<p><a class="sc-mail" href="mailto:gamestudio05.team@gmail.com">gamestudio05.team@gmail.com</a></p>
-</div>
-</section>
-</main>
-<footer>
+
+<section class="marquee" aria-labelledby="studio-title">
 <div class="wrap">
-<div class="copyright">&copy; 2026 Game Studio 05</div>
+<h1 id="studio-title">Game Studio 05</h1>
+<p class="marquee-lead">A small studio making Android games that are easy to pick up and hard to put down. Two on the bill so far, both free on Google Play.</p>
+</div>
+</section>
+
+<section class="act act-summit" id="summit-climb" aria-labelledby="summit-title">
+<picture class="act-bg">
+<source type="image/avif" srcset="/assets/img/hero/highway-768.avif 768w, /assets/img/hero/highway-1376.avif 1376w" sizes="100vw">
+<source type="image/webp" srcset="/assets/img/hero/highway-768.webp 768w, /assets/img/hero/highway-1376.webp 1376w" sizes="100vw">
+<img src="/assets/img/hero/highway-1376.jpg" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
+</picture>
+<canvas class="hero-stage" aria-hidden="true" data-attract></canvas>
+<div class="wrap act-copy">
+<h2 id="summit-title">
+<picture>
+<source type="image/avif" srcset="/assets/img/brand/summit-logo-480.avif 480w, /assets/img/brand/summit-logo-960.avif 960w" sizes="(max-width: 600px) 64vw, 380px">
+<source type="image/webp" srcset="/assets/img/brand/summit-logo-480.webp 480w, /assets/img/brand/summit-logo-960.webp 960w" sizes="(max-width: 600px) 64vw, 380px">
+<img class="act-logo" src="/assets/img/brand/summit-logo-480.png" width="480" height="158" alt="Summit Climb" decoding="async">
+</picture>
+<span class="hero-sub">Outrun the Horde</span>
+</h2>
+<p>A physics hill climb with 16 vehicles, ten hand-built stages and a zombie horde that never gets tired.</p>
+<div class="hero-actions">
+<a class="btn btn-play" href="/summit-climb/"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 8.2v7.6l6-3.8z" fill="currentColor"/></svg><span>Meet Summit Climb</span></a>
+<a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=com.gamestudio05.summitclimb&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dstudio-home" rel="noopener noreferrer"><span>Google Play</span><svg class="icon-ext" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3L3 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</div>
+<p class="act-links"><a href="/summit-climb/privacy/">Privacy policy</a> <span aria-hidden="true">/</span> <a href="/summit-climb/delete-data/">Delete your data</a></p>
+</div>
+</section>
+
+<section class="act act-bleedoku" id="bleedoku" aria-labelledby="bleedoku-title">
+<div class="wrap act-bleedoku-grid">
+<div class="act-copy">
+<h2 id="bleedoku-title">
+<picture>
+<source type="image/avif" srcset="/assets/img/bleedoku/logo-160.avif 160w, /assets/img/bleedoku/logo-320.avif 320w" sizes="260px">
+<source type="image/webp" srcset="/assets/img/bleedoku/logo-160.webp 160w, /assets/img/bleedoku/logo-320.webp 320w" sizes="260px">
+<img class="bleedoku-logo" src="/assets/img/bleedoku/logo-320.png" width="320" height="180" alt="Bleedoku" loading="lazy" decoding="async">
+</picture>
+<span class="hero-sub">Colour Puzzle</span>
+</h2>
+<p>Mix colours, set off BOOMs and bring a painted village back to life.</p>
+<div class="hero-actions">
+<a class="btn btn-bleedoku" href="https://play.google.com/store/apps/details?id=com.bleedoku.game" rel="noopener noreferrer"><span>Bleedoku on Google Play</span><svg class="icon-ext" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3L3 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</div>
+</div>
+<figure class="bleedoku-art">
+<picture>
+<source type="image/avif" srcset="/assets/img/bleedoku/trailer-poster-480.avif 480w, /assets/img/bleedoku/trailer-poster-768.avif 768w, /assets/img/bleedoku/trailer-poster-1200.avif 1200w" sizes="(max-width: 900px) 100vw, 640px">
+<source type="image/webp" srcset="/assets/img/bleedoku/trailer-poster-480.webp 480w, /assets/img/bleedoku/trailer-poster-768.webp 768w, /assets/img/bleedoku/trailer-poster-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 640px">
+<img src="/assets/img/bleedoku/trailer-poster-768.jpg" width="768" height="432" alt="Bleedoku's jelly characters burst out of a splash of pink, blue and yellow paint" loading="lazy" decoding="async">
+</picture>
+</figure>
+</div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contact-title">
+<div class="wrap contact-grid">
+<div>
+<h2 id="contact-title">Say hello.</h2>
+<p>Questions, bugs, ideas or business: we read every message.</p>
+</div>
+<p class="contact-mail"><a href="mailto:gamestudio05.team@gmail.com">gamestudio05.team@gmail.com</a></p>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="footer-grid">
+<div>
+<p class="footer-studio">Game Studio 05</p>
+<p>Small studio, mobile games for Android. Summit Climb: Outrun the Horde and Bleedoku are published by Game Studio 05.</p>
+</div>
+<div>
+<h2>Summit Climb</h2>
+<ul>
+<li><a href="/summit-climb/">About the game</a></li>
+<li><a href="/summit-climb/privacy/">Privacy policy</a></li>
+<li><a href="/summit-climb/delete-data/">Delete your data</a></li>
+<li><a href="https://play.google.com/store/apps/details?id=com.gamestudio05.summitclimb" rel="noopener noreferrer">Google Play<svg class="icon-ext" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3L3 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+</ul>
+</div>
+<div>
+<h2>Studio</h2>
+<ul>
+<li><a href="/">Game Studio 05</a></li>
+<li><a href="https://play.google.com/store/apps/details?id=com.bleedoku.game" rel="noopener noreferrer">Bleedoku on Google Play<svg class="icon-ext" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3L3 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+<li><a href="mailto:gamestudio05.team@gmail.com">gamestudio05.team@gmail.com</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-base"><span>&copy; 2026 Game Studio 05</span><span>Google Play is a trademark of Google LLC.</span></div>
 </div>
 </footer>
 </body>

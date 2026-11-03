@@ -4,11 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Summit Climb: Outrun the Horde | Game Studio 05</title>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-W/ElZShOJtCubVhu8ChmF9MFE28u3D4oehL4ohr33EI='; style-src 'self'; img-src 'self'; font-src 'self'; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-b31BHNZp7PP5dlR8vDk3qZ4iPvnoTZIFpCqAKWsxZpQ='; style-src 'self'; img-src 'self'; font-src 'self'; media-src 'self'; connect-src 'self'; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="description" content="A physics hill climb for Android with 16 vehicles, ten hand-built stages and a zombie horde on your tail. From Game Studio 05.">
 <link rel="canonical" href="https://gamestudio05.github.io/summit-climb/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Game Studio 05">
 <meta property="og:title" content="Summit Climb: Outrun the Horde">
 <meta property="og:description" content="A physics hill climb for Android with 16 vehicles, ten hand-built stages and a zombie horde on your tail.">
 <meta property="og:url" content="https://gamestudio05.github.io/summit-climb/">
@@ -20,172 +21,598 @@
 <meta name="twitter:title" content="Summit Climb: Outrun the Horde">
 <meta name="twitter:description" content="A physics hill climb for Android with 16 vehicles, ten hand-built stages and a zombie horde on your tail.">
 <meta name="twitter:image" content="https://gamestudio05.github.io/assets/img/summit-social.jpg">
-<meta name="theme-color" content="#fbf7f2" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#15110e" media="(prefers-color-scheme: dark)">
+<meta name="twitter:image:alt" content="An orange off-roader leaps a broken desert bridge ahead of a zombie horde">
+<meta name="theme-color" content="#0e0f11">
 <link rel="icon" href="/assets/img/summit-icon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/img/summit-icon-180.png">
-<link rel="preload" as="font" href="/assets/fonts/nunito-latin.woff2" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/site.css">
-<link rel="stylesheet" href="/assets/css/summit.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Summit Climb: Outrun the Horde","operatingSystem":"ANDROID","applicationCategory":"GameApplication","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Game Studio 05"},"url":"https://gamestudio05.github.io/summit-climb/","installUrl":"https://play.google.com/store/apps/details?id=com.gamestudio05.summitclimb"}</script>
+<link rel="preload" as="image" href="/assets/img/hero/highway-1376.avif" type="image/avif" imagesrcset="/assets/img/hero/highway-768.avif 768w, /assets/img/hero/highway-1376.avif 1376w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="font" href="/assets/fonts/russo-one.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="/assets/fonts/barlow-condensed-700.woff2" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/core.css">
+<link rel="stylesheet" href="/assets/css/game.css">
+<script src="/assets/js/summit.js" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Summit Climb: Outrun the Horde","description":"A physics hill climb for Android with 16 vehicles, ten hand-built stages and a zombie horde on your tail.","operatingSystem":"ANDROID","applicationCategory":"GameApplication","inLanguage":"en","image":"https://gamestudio05.github.io/assets/img/summit-social.jpg","screenshot":"https://gamestudio05.github.io/assets/img/sc/shot/s1-1600.jpg","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Game Studio 05","url":"https://gamestudio05.github.io/","email":"gamestudio05.team@gmail.com"},"url":"https://gamestudio05.github.io/summit-climb/","installUrl":"https://play.google.com/store/apps/details?id=com.gamestudio05.summitclimb"}</script>
 </head>
-<body class="summit">
+<body class="page-summit">
 <a class="skip" href="#main">Skip to content</a>
-<header>
-<a class="sc-brand" href="/summit-climb/">
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/summit-climb/">
 <picture>
-<source type="image/avif" srcset="/assets/img/summit-icon-96.avif 96w, /assets/img/summit-icon-192.avif 192w" sizes="48px">
-<source type="image/webp" srcset="/assets/img/summit-icon-96.webp 96w, /assets/img/summit-icon-192.webp 192w" sizes="48px">
+<source type="image/avif" srcset="/assets/img/summit-icon-96.avif 96w, /assets/img/summit-icon-192.avif 192w" sizes="34px">
+<source type="image/webp" srcset="/assets/img/summit-icon-96.webp 96w, /assets/img/summit-icon-192.webp 192w" sizes="34px">
 <img src="/assets/img/summit-icon-96.png" width="96" height="96" alt="" decoding="async">
 </picture>
-<span>Summit Climb<small>GAME STUDIO 05</small></span>
+<span class="brand-text">Summit Climb<small>Game Studio 05</small></span>
 </a>
-<nav aria-label="Main">
-<a href="#game">The game</a>
+<nav class="site-nav" aria-label="Main">
+<a href="#machines">Machines</a>
+<a href="#stages">Stages</a>
+<a href="#outrun">Outrun</a>
+<a href="#trailer">Trailer</a>
 <a href="/summit-climb/privacy/">Privacy</a>
-<a href="#contact">Contact</a>
 </nav>
-<a class="button compact" href="https://play.google.com/store/apps/details?id=com.gamestudio05.summitclimb&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding" rel="noopener noreferrer">Get it on Google Play <span aria-hidden="true">&#8599;</span>
-</a>
+<a class="btn btn-compact" href="https://play.google.com/store/apps/details?id=com.gamestudio05.summitclimb&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.8v16.4c0 .8.9 1.3 1.6.9l13.3-8.2c.6-.4.6-1.3 0-1.7L7.6 2.9C6.9 2.5 6 3 6 3.8z" fill="currentColor"/></svg><span><span class="lg">Get it on </span>Google Play</span></a>
+</div>
 </header>
+
 <main id="main">
-<section class="hero wrap">
-<div>
-<p class="eyebrow">A PHYSICS HILL CLIMB FROM GAME STUDIO 05</p>
-<h1>Floor it up the mountain.<br><em>Outrun the horde.</em>
+
+<section class="hero" aria-labelledby="hero-title">
+<picture class="hero-bg">
+<source type="image/avif" srcset="/assets/img/hero/highway-768.avif 768w, /assets/img/hero/highway-1376.avif 1376w" sizes="100vw">
+<source type="image/webp" srcset="/assets/img/hero/highway-768.webp 768w, /assets/img/hero/highway-1376.webp 1376w" sizes="100vw">
+<img src="/assets/img/hero/highway-1376.jpg" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
+</picture>
+<canvas class="hero-stage" aria-hidden="true" data-attract></canvas>
+<div class="hero-copy wrap">
+<h1 id="hero-title">
+<picture>
+<source type="image/avif" srcset="/assets/img/brand/summit-logo-480.avif 480w, /assets/img/brand/summit-logo-960.avif 960w" sizes="(max-width: 600px) 72vw, 460px">
+<source type="image/webp" srcset="/assets/img/brand/summit-logo-480.webp 480w, /assets/img/brand/summit-logo-960.webp 960w" sizes="(max-width: 600px) 72vw, 460px">
+<img class="hero-logo" src="/assets/img/brand/summit-logo-480.png" width="480" height="158" alt="Summit Climb" decoding="async">
+</picture>
+<span class="hero-sub">Outrun the Horde</span>
 </h1>
-<p class="lead">Real cars, real suspension and ten hand-built stages, with a zombie horde that never gets tired right on your tail.</p>
-<div class="actions">
-<a class="button" href="https://play.google.com/store/apps/details?id=com.gamestudio05.summitclimb&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding" rel="noopener noreferrer">Get it on Google Play <span aria-hidden="true">&#8599;</span>
+<p class="hero-lead">Floor it up ten hand-built stages in real cars on real suspension, with a zombie horde that never gets tired right on your tail.</p>
+<div class="hero-actions">
+<a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.gamestudio05.summitclimb&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.8v16.4c0 .8.9 1.3 1.6.9l13.3-8.2c.6-.4.6-1.3 0-1.7L7.6 2.9C6.9 2.5 6 3 6 3.8z" fill="currentColor"/></svg><span class="btn-label"><small>Free on Android</small>Get it on Google Play</span></a>
+<a class="btn btn-ghost" href="#trailer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 8.2v7.6l6-3.8z" fill="currentColor"/></svg><span>Watch the trailer</span></a>
+</div>
+<p class="hero-facts">Contains ads <span aria-hidden="true">/</span> Optional in-app purchases <span aria-hidden="true">/</span> No sign-in</p>
+</div>
+</section>
+
+<div class="bill" role="presentation">
+<p class="bill-line"><span>16 machines</span><span>10 stages</span><span>10 pieces of kit</span><span>1 horde that never gets tired</span></p>
+</div>
+
+<section class="lineup" id="machines" aria-labelledby="machines-title">
+<div class="wrap">
+<div class="section-head">
+<h2 id="machines-title">Sixteen machines.<br>Four ways up.</h2>
+<p>Bikes, cars, trucks and monster trucks, each with its own suspension, grip, weight and engine sound. Every class has four tiers to unlock, and every tier is faster and tougher than the last.</p>
+</div>
+<div class="classes" data-tabs>
+<div class="class-tabs" role="tablist" aria-label="Vehicle classes" hidden>
+<button type="button" role="tab" id="tab-bikes" aria-controls="class-bikes" aria-selected="false" tabindex="-1">Bikes</button>
+<button type="button" role="tab" id="tab-cars" aria-controls="class-cars" aria-selected="true">Cars</button>
+<button type="button" role="tab" id="tab-trucks" aria-controls="class-trucks" aria-selected="false" tabindex="-1">Trucks</button>
+<button type="button" role="tab" id="tab-monsters" aria-controls="class-monsters" aria-selected="false" tabindex="-1">Monster trucks</button>
+</div>
+<div class="class-panel" id="class-bikes" role="tabpanel" aria-labelledby="tab-bikes" data-class="bikes">
+<h3 class="class-name">Bikes</h3>
+<ul class="machines">
+<li class="machine">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/v/goat-360.avif 360w, /assets/img/sc/v/goat-720.avif 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px">
+<img src="/assets/img/sc/v/goat-360.webp" srcset="/assets/img/sc/v/goat-360.webp 360w, /assets/img/sc/v/goat-720.webp 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px" width="360" height="275" alt="" loading="lazy" decoding="async">
+</picture>
+<p class="plate"><span class="visually-hidden">Tier </span>1</p>
+<h3>Mountain Goat</h3>
+<p>Light, twitchy, flips for fun</p>
+</li>
+<li class="machine">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/v/dirtfox-360.avif 360w, /assets/img/sc/v/dirtfox-720.avif 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px">
+<img src="/assets/img/sc/v/dirtfox-360.webp" srcset="/assets/img/sc/v/dirtfox-360.webp 360w, /assets/img/sc/v/dirtfox-720.webp 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px" width="360" height="256" alt="" loading="lazy" decoding="async">
+</picture>
+<p class="plate"><span class="visually-hidden">Tier </span>2</p>
+<h3>Dirt Fox</h3>
+<p>More punch, more grip</p>
+</li>
+<li class="machine">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/v/razor-360.avif 360w, /assets/img/sc/v/razor-720.avif 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px">
+<img src="/assets/img/sc/v/razor-360.webp" srcset="/assets/img/sc/v/razor-360.webp 360w, /assets/img/sc/v/razor-720.webp 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px" width="360" height="216" alt="" loading="lazy" decoding="async">
+</picture>
+<p class="plate"><span class="visually-hidden">Tier </span>3</p>
+<h3>Razor</h3>
+<p>Race bike. Pure power.</p>
+</li>
+<li class="machine">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/v/skyhawk-360.avif 360w, /assets/img/sc/v/skyhawk-720.avif 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px">
+<img src="/assets/img/sc/v/skyhawk-360.webp" srcset="/assets/img/sc/v/skyhawk-360.webp 360w, /assets/img/sc/v/skyhawk-720.webp 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px" width="360" height="254" alt="" loading="lazy" decoding="async">
+</picture>
+<p class="plate"><span class="visually-hidden">Tier </span>4</p>
+<h3>Skyhawk</h3>
+<p>Rally-raid king. Flies forever.</p>
+</li>
+</ul>
+</div>
+<div class="class-panel" id="class-cars" role="tabpanel" aria-labelledby="tab-cars" data-class="cars">
+<h3 class="class-name">Cars</h3>
+<ul class="machines">
+<li class="machine">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/v/scout-360.avif 360w, /assets/img/sc/v/scout-720.avif 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px">
+<img src="/assets/img/sc/v/scout-360.webp" srcset="/assets/img/sc/v/scout-360.webp 360w, /assets/img/sc/v/scout-720.webp 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px" width="360" height="159" alt="" loading="lazy" decoding="async">
+</picture>
+<p class="plate"><span class="visually-hidden">Tier </span>1</p>
+<h3>Scout</h3>
+<p>Dependable all-rounder</p>
+</li>
+<li class="machine">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/v/hopper-360.avif 360w, /assets/img/sc/v/hopper-720.avif 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px">
+<img src="/assets/img/sc/v/hopper-360.webp" srcset="/assets/img/sc/v/hopper-360.webp 360w, /assets/img/sc/v/hopper-720.webp 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px" width="360" height="134" alt="" loading="lazy" decoding="async">
+</picture>
+<p class="plate"><span class="visually-hidden">Tier </span>2</p>
+<h3>Dune Hopper</h3>
+<p>Soft springs, huge air</p>
+</li>
+<li class="machine">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/v/streak-360.avif 360w, /assets/img/sc/v/streak-720.avif 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px">
+<img src="/assets/img/sc/v/streak-360.webp" srcset="/assets/img/sc/v/streak-360.webp 360w, /assets/img/sc/v/streak-720.webp 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px" width="360" height="144" alt="" loading="lazy" decoding="async">
+</picture>
+<p class="plate"><span class="visually-hidden">Tier </span>3</p>
+<h3>Streak</h3>
+<p>Fast. Mind the landings.</p>
+</li>
+<li class="machine">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/v/tempest-360.avif 360w, /assets/img/sc/v/tempest-720.avif 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px">
+<img src="/assets/img/sc/v/tempest-360.webp" srcset="/assets/img/sc/v/tempest-360.webp 360w, /assets/img/sc/v/tempest-720.webp 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px" width="360" height="138" alt="" loading="lazy" decoding="async">
+</picture>
+<p class="plate"><span class="visually-hidden">Tier </span>4</p>
+<h3>Tempest</h3>
+<p>Desert racer. Top speed, 4x4.</p>
+</li>
+</ul>
+</div>
+<div class="class-panel" id="class-trucks" role="tabpanel" aria-labelledby="tab-trucks" data-class="trucks">
+<h3 class="class-name">Trucks</h3>
+<ul class="machines">
+<li class="machine">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/v/mule-360.avif 360w, /assets/img/sc/v/mule-720.avif 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px">
+<img src="/assets/img/sc/v/mule-360.webp" srcset="/assets/img/sc/v/mule-360.webp 360w, /assets/img/sc/v/mule-720.webp 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px" width="360" height="226" alt="" loading="lazy" decoding="async">
+</picture>
+<p class="plate"><span class="visually-hidden">Tier </span>1</p>
+<h3>Mule</h3>
+<p>Slow, stubborn, climbs anything</p>
+</li>
+<li class="machine">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/v/ridgeback-360.avif 360w, /assets/img/sc/v/ridgeback-720.avif 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px">
+<img src="/assets/img/sc/v/ridgeback-360.webp" srcset="/assets/img/sc/v/ridgeback-360.webp 360w, /assets/img/sc/v/ridgeback-720.webp 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px" width="360" height="140" alt="" loading="lazy" decoding="async">
+</picture>
+<p class="plate"><span class="visually-hidden">Tier </span>2</p>
+<h3>Ridgeback</h3>
+<p>Big tank for the long haul</p>
+</li>
+<li class="machine">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/v/crawler-360.avif 360w, /assets/img/sc/v/crawler-720.avif 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px">
+<img src="/assets/img/sc/v/crawler-360.webp" srcset="/assets/img/sc/v/crawler-360.webp 360w, /assets/img/sc/v/crawler-720.webp 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px" width="360" height="158" alt="" loading="lazy" decoding="async">
+</picture>
+<p class="plate"><span class="visually-hidden">Tier </span>3</p>
+<h3>Rock Crawler</h3>
+<p>Grips the impossible</p>
+</li>
+<li class="machine">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/v/titan-360.avif 360w, /assets/img/sc/v/titan-720.avif 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px">
+<img src="/assets/img/sc/v/titan-360.webp" srcset="/assets/img/sc/v/titan-360.webp 360w, /assets/img/sc/v/titan-720.webp 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px" width="360" height="167" alt="" loading="lazy" decoding="async">
+</picture>
+<p class="plate"><span class="visually-hidden">Tier </span>4</p>
+<h3>Titan</h3>
+<p>Expedition giant. Huge tank.</p>
+</li>
+</ul>
+</div>
+<div class="class-panel" id="class-monsters" role="tabpanel" aria-labelledby="tab-monsters" data-class="monsters">
+<h3 class="class-name">Monster trucks</h3>
+<ul class="machines">
+<li class="machine">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/v/brawler-360.avif 360w, /assets/img/sc/v/brawler-720.avif 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px">
+<img src="/assets/img/sc/v/brawler-360.webp" srcset="/assets/img/sc/v/brawler-360.webp 360w, /assets/img/sc/v/brawler-720.webp 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px" width="360" height="196" alt="" loading="lazy" decoding="async">
+</picture>
+<p class="plate"><span class="visually-hidden">Tier </span>1</p>
+<h3>Brawler</h3>
+<p>Small body, giant tyres</p>
+</li>
+<li class="machine">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/v/boulder-360.avif 360w, /assets/img/sc/v/boulder-720.avif 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px">
+<img src="/assets/img/sc/v/boulder-360.webp" srcset="/assets/img/sc/v/boulder-360.webp 360w, /assets/img/sc/v/boulder-720.webp 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px" width="360" height="175" alt="" loading="lazy" decoding="async">
+</picture>
+<p class="plate"><span class="visually-hidden">Tier </span>2</p>
+<h3>Boulder</h3>
+<p>Rolls over the rough stuff</p>
+</li>
+<li class="machine">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/v/goliath-360.avif 360w, /assets/img/sc/v/goliath-720.avif 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px">
+<img src="/assets/img/sc/v/goliath-360.webp" srcset="/assets/img/sc/v/goliath-360.webp 360w, /assets/img/sc/v/goliath-720.webp 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px" width="360" height="168" alt="" loading="lazy" decoding="async">
+</picture>
+<p class="plate"><span class="visually-hidden">Tier </span>3</p>
+<h3>Goliath</h3>
+<p>Fast, huge and hungry</p>
+</li>
+<li class="machine">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/v/mammoth-360.avif 360w, /assets/img/sc/v/mammoth-720.avif 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px">
+<img src="/assets/img/sc/v/mammoth-360.webp" srcset="/assets/img/sc/v/mammoth-360.webp 360w, /assets/img/sc/v/mammoth-720.webp 720w" sizes="(max-width: 600px) 80vw, (max-width: 1000px) 44vw, 280px" width="360" height="170" alt="" loading="lazy" decoding="async">
+</picture>
+<p class="plate"><span class="visually-hidden">Tier </span>4</p>
+<h3>Mammoth</h3>
+<p>Armoured monster. Unstoppable.</p>
+</li>
+</ul>
+</div>
+</div>
+<p class="lineup-note">Every upgrade is measurably better: engine, suspension, tyres, 4WD and more.</p>
+</div>
+</section>
+
+<section class="stages" id="stages" aria-labelledby="stages-title">
+<div class="wrap">
+<div class="section-head">
+<h2 id="stages-title">Ten stages.<br>Meadow to Moon.</h2>
+<p>Ditches, kickers, cliffs and craters get bigger the further you go. Each stage is its own course, and the last one is the top of the mountain.</p>
+</div>
+</div>
+<div class="stage-rail" data-rail>
+<ol class="stage-list" tabindex="0" aria-label="The ten stages, scroll sideways">
+<li class="stage">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/stage/meadow-480.avif 480w, /assets/img/sc/stage/meadow-800.avif 800w" sizes="(max-width: 600px) 78vw, 380px">
+<source type="image/webp" srcset="/assets/img/sc/stage/meadow-480.webp 480w, /assets/img/sc/stage/meadow-800.webp 800w" sizes="(max-width: 600px) 78vw, 380px">
+<img src="/assets/img/sc/stage/meadow-480.jpg" width="480" height="268" alt="Green hills rolling away under a big blue sky" loading="lazy" decoding="async">
+</picture>
+<div class="stage-text"><p class="stage-no">Stage 1</p><h3>Meadow Run</h3><p>Rolling green hills</p></div>
+</li>
+<li class="stage">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/stage/highway-480.avif 480w, /assets/img/sc/stage/highway-800.avif 800w" sizes="(max-width: 600px) 78vw, 380px">
+<source type="image/webp" srcset="/assets/img/sc/stage/highway-480.webp 480w, /assets/img/sc/stage/highway-800.webp 800w" sizes="(max-width: 600px) 78vw, 380px">
+<img src="/assets/img/sc/stage/highway-480.jpg" width="480" height="268" alt="A desert highway bridge crossing red mesas at sunset" loading="lazy" decoding="async">
+</picture>
+<div class="stage-text"><p class="stage-no">Stage 2</p><h3>Desert Highway</h3><p>Broken bridges. Floor it.</p></div>
+</li>
+<li class="stage">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/stage/canyon-480.avif 480w, /assets/img/sc/stage/canyon-800.avif 800w" sizes="(max-width: 600px) 78vw, 380px">
+<source type="image/webp" srcset="/assets/img/sc/stage/canyon-480.webp 480w, /assets/img/sc/stage/canyon-800.webp 800w" sizes="(max-width: 600px) 78vw, 380px">
+<img src="/assets/img/sc/stage/canyon-480.jpg" width="480" height="268" alt="Red rock canyon ledges dropping into a deep gorge" loading="lazy" decoding="async">
+</picture>
+<div class="stage-text"><p class="stage-no">Stage 3</p><h3>Red Canyon</h3><p>Ledges, drops and gaps</p></div>
+</li>
+<li class="stage">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/stage/frost-480.avif 480w, /assets/img/sc/stage/frost-800.avif 800w" sizes="(max-width: 600px) 78vw, 380px">
+<source type="image/webp" srcset="/assets/img/sc/stage/frost-480.webp 480w, /assets/img/sc/stage/frost-800.webp 800w" sizes="(max-width: 600px) 78vw, 380px">
+<img src="/assets/img/sc/stage/frost-480.jpg" width="480" height="268" alt="Jagged snowy peaks and glaciers" loading="lazy" decoding="async">
+</picture>
+<div class="stage-text"><p class="stage-no">Stage 4</p><h3>Frostbite Pass</h3><p>Slippery ice. Feather the gas.</p></div>
+</li>
+<li class="stage">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/stage/pine-480.avif 480w, /assets/img/sc/stage/pine-800.avif 800w" sizes="(max-width: 600px) 78vw, 380px">
+<source type="image/webp" srcset="/assets/img/sc/stage/pine-480.webp 480w, /assets/img/sc/stage/pine-800.webp 800w" sizes="(max-width: 600px) 78vw, 380px">
+<img src="/assets/img/sc/stage/pine-480.jpg" width="480" height="268" alt="A ridge of pine forest above misty valleys" loading="lazy" decoding="async">
+</picture>
+<div class="stage-text"><p class="stage-no">Stage 5</p><h3>Pine Ridge</h3><p>Logs, roots and steep walls</p></div>
+</li>
+<li class="stage">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/stage/dunes-480.avif 480w, /assets/img/sc/stage/dunes-800.avif 800w" sizes="(max-width: 600px) 78vw, 380px">
+<source type="image/webp" srcset="/assets/img/sc/stage/dunes-480.webp 480w, /assets/img/sc/stage/dunes-800.webp 800w" sizes="(max-width: 600px) 78vw, 380px">
+<img src="/assets/img/sc/stage/dunes-480.jpg" width="480" height="268" alt="Giant golden sand dunes" loading="lazy" decoding="async">
+</picture>
+<div class="stage-text"><p class="stage-no">Stage 6</p><h3>Dune Sea</h3><p>Giant waves of sand</p></div>
+</li>
+<li class="stage">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/stage/bog-480.avif 480w, /assets/img/sc/stage/bog-800.avif 800w" sizes="(max-width: 600px) 78vw, 380px">
+<source type="image/webp" srcset="/assets/img/sc/stage/bog-480.webp 480w, /assets/img/sc/stage/bog-800.webp 800w" sizes="(max-width: 600px) 78vw, 380px">
+<img src="/assets/img/sc/stage/bog-480.jpg" width="480" height="268" alt="A grey, misty bog of pools and reeds" loading="lazy" decoding="async">
+</picture>
+<div class="stage-text"><p class="stage-no">Stage 7</p><h3>Bogwater</h3><p>Mud pits and sunken logs</p></div>
+</li>
+<li class="stage">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/stage/volcano-480.avif 480w, /assets/img/sc/stage/volcano-800.avif 800w" sizes="(max-width: 600px) 78vw, 380px">
+<source type="image/webp" srcset="/assets/img/sc/stage/volcano-480.webp 480w, /assets/img/sc/stage/volcano-800.webp 800w" sizes="(max-width: 600px) 78vw, 380px">
+<img src="/assets/img/sc/stage/volcano-480.jpg" width="480" height="268" alt="An erupting volcano over black lava fields" loading="lazy" decoding="async">
+</picture>
+<div class="stage-text"><p class="stage-no">Stage 8</p><h3>Ash Volcano</h3><p>Lava-rock jumps and ledges</p></div>
+</li>
+<li class="stage">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/stage/lunar-480.avif 480w, /assets/img/sc/stage/lunar-800.avif 800w" sizes="(max-width: 600px) 78vw, 380px">
+<source type="image/webp" srcset="/assets/img/sc/stage/lunar-480.webp 480w, /assets/img/sc/stage/lunar-800.webp 800w" sizes="(max-width: 600px) 78vw, 380px">
+<img src="/assets/img/sc/stage/lunar-480.jpg" width="480" height="268" alt="The cratered grey surface of the Moon with Earth in the sky" loading="lazy" decoding="async">
+</picture>
+<div class="stage-text"><p class="stage-no">Stage 9</p><h3>Lunar Basin</h3><p>One-third gravity. Big air.</p></div>
+</li>
+<li class="stage">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/stage/summit-480.avif 480w, /assets/img/sc/stage/summit-800.avif 800w" sizes="(max-width: 600px) 78vw, 380px">
+<source type="image/webp" srcset="/assets/img/sc/stage/summit-480.webp 480w, /assets/img/sc/stage/summit-800.webp 800w" sizes="(max-width: 600px) 78vw, 380px">
+<img src="/assets/img/sc/stage/summit-480.jpg" width="480" height="268" alt="A snowy mountain top above a sea of clouds" loading="lazy" decoding="async">
+</picture>
+<div class="stage-text"><p class="stage-no">Stage 10</p><h3>The Summit</h3><p>The final climb</p></div>
+</li>
+</ol>
+<div class="rail-controls wrap" hidden>
+<button type="button" class="rail-btn" data-dir="-1" aria-label="Previous stages"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<button type="button" class="rail-btn" data-dir="1" aria-label="Next stages"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+</div>
+</div>
+</section>
+
+<section class="outrun" id="outrun" aria-labelledby="outrun-title">
+<picture class="outrun-plate">
+<source type="image/avif" srcset="/assets/img/sc/horde-960.avif 960w, /assets/img/sc/horde-1600.avif 1600w" sizes="100vw">
+<source type="image/webp" srcset="/assets/img/sc/horde-960.webp 960w, /assets/img/sc/horde-1600.webp 1600w" sizes="100vw">
+<img src="/assets/img/sc/horde-960.jpg" width="960" height="540" alt="An armoured truck with a roof gun bursts through a Quarantine Zone gate as zombies run alongside it" loading="lazy" decoding="async">
+</picture>
+<div class="outrun-copy wrap">
+<h2 id="outrun-title">They never<br>get tired.</h2>
+<p>Outrun mode puts a horde on your tail. Ram the walkers, chain combos and keep your fuel up. Wreck the car or let them catch you, and the run is over.</p>
+</div>
+<div class="march" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+</section>
+
+<section class="night" aria-labelledby="night-title">
+<div class="wrap night-grid">
+<div class="night-copy">
+<h2 id="night-title">Night falls.<br>Lights on.</h2>
+<p>On long runs the sun goes down and the road goes dark. Upgrade your headlights in the garage to throw the beam further down the hill.</p>
+</div>
+<figure class="night-shot" data-beam>
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/night-960.avif 960w, /assets/img/sc/night-1600.avif 1600w" sizes="(max-width: 900px) 100vw, 60vw">
+<source type="image/webp" srcset="/assets/img/sc/night-960.webp 960w, /assets/img/sc/night-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 60vw">
+<img src="/assets/img/sc/night-960.jpg" width="960" height="540" alt="At night a green off-roader's headlights light up a snowy slope" loading="lazy" decoding="async">
+</picture>
+</figure>
+</div>
+</section>
+
+<section class="armory" id="armory" aria-labelledby="armory-title">
+<div class="wrap">
+<div class="section-head">
+<h2 id="armory-title">The Armory.<br>Ten pieces of kit.</h2>
+<p>Unlock and upgrade them all, then load up a weapon, a body upgrade and a piece of gear before you set off.</p>
+</div>
+<ul class="kit">
+<li><picture><source type="image/webp" srcset="/assets/img/sc/kit/mg.webp"><img src="/assets/img/sc/kit/mg.png" width="160" height="160" alt="" loading="lazy" decoding="async"></picture><span>Machine gun</span></li>
+<li><picture><source type="image/webp" srcset="/assets/img/sc/kit/shotgun.webp"><img src="/assets/img/sc/kit/shotgun.png" width="160" height="160" alt="" loading="lazy" decoding="async"></picture><span>Scattergun</span></li>
+<li><picture><source type="image/webp" srcset="/assets/img/sc/kit/flamer.webp"><img src="/assets/img/sc/kit/flamer.png" width="160" height="160" alt="" loading="lazy" decoding="async"></picture><span>Flamethrower</span></li>
+<li><picture><source type="image/webp" srcset="/assets/img/sc/kit/rockets.webp"><img src="/assets/img/sc/kit/rockets.png" width="160" height="160" alt="" loading="lazy" decoding="async"></picture><span>Rocket pod</span></li>
+<li><picture><source type="image/webp" srcset="/assets/img/sc/kit/ram.webp"><img src="/assets/img/sc/kit/ram.png" width="160" height="160" alt="" loading="lazy" decoding="async"></picture><span>Ram bar</span></li>
+<li><picture><source type="image/webp" srcset="/assets/img/sc/kit/spikes.webp"><img src="/assets/img/sc/kit/spikes.png" width="160" height="160" alt="" loading="lazy" decoding="async"></picture><span>Spiked plating</span></li>
+<li><picture><source type="image/webp" srcset="/assets/img/sc/kit/shock.webp"><img src="/assets/img/sc/kit/shock.png" width="160" height="160" alt="" loading="lazy" decoding="async"></picture><span>Shock cage</span></li>
+<li><picture><source type="image/webp" srcset="/assets/img/sc/kit/nitro.webp"><img src="/assets/img/sc/kit/nitro.png" width="160" height="160" alt="" loading="lazy" decoding="async"></picture><span>Nitro</span></li>
+<li><picture><source type="image/webp" srcset="/assets/img/sc/kit/mines.webp"><img src="/assets/img/sc/kit/mines.png" width="160" height="160" alt="" loading="lazy" decoding="async"></picture><span>Mine dropper</span></li>
+<li><picture><source type="image/webp" srcset="/assets/img/sc/kit/armour.webp"><img src="/assets/img/sc/kit/armour.png" width="160" height="160" alt="" loading="lazy" decoding="async"></picture><span>Armour plate</span></li>
+</ul>
+</div>
+</section>
+
+<section class="starring" aria-labelledby="starring-title">
+<div class="wrap starring-grid">
+<div class="starring-copy">
+<h2 id="starring-title"><span class="bill-word">Starring</span> you, behind the wheel.</h2>
+<p>Pick a photo and your face rides in the driver's seat. The face is found on your phone, the game keeps only a small portrait, and the photo never leaves your phone.</p>
+<p><a href="/summit-climb/privacy/#your-driver-photo">How the driver photo works</a></p>
+</div>
+<picture class="starring-rider">
+<source type="image/avif" srcset="/assets/img/sc/rider-205.avif">
+<source type="image/webp" srcset="/assets/img/sc/rider-205.webp">
+<img src="/assets/img/sc/rider-205.png" width="205" height="720" alt="The rider in white race gear, arms folded" loading="lazy" decoding="async">
+</picture>
+</div>
+</section>
+
+<section class="daily" aria-labelledby="daily-title">
+<div class="wrap daily-grid">
+<figure class="daily-shot">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/shot/s8-640.avif">
+<source type="image/webp" srcset="/assets/img/sc/shot/s8-640.webp">
+<img src="/assets/img/sc/shot/s8-640.jpg" width="640" height="360" alt="The league table: rank 19 of 31, climbing on coins earned" loading="lazy" decoding="async">
+</picture>
+</figure>
+<div>
+<h2 id="daily-title">Something to chase every day.</h2>
+<ul class="daily-list">
+<li><strong>Seven-day login streak</strong> with a reward for every day you turn up.</li>
+<li><strong>Three new missions</strong> every day.</li>
+<li><strong>A league of thirty rival drivers</strong> to climb on coins, distance and zombies.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="trailer" id="trailer" aria-labelledby="trailer-title">
+<div class="wrap">
+<h2 id="trailer-title">See it move.</h2>
+<div class="video" data-video="l6Pi0cld8Xo">
+<a class="video-facade" href="https://www.youtube.com/watch?v=l6Pi0cld8Xo" rel="noopener noreferrer">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/outrun-960.avif 960w, /assets/img/sc/outrun-1600.avif 1600w" sizes="(max-width: 1240px) 100vw, 1240px">
+<source type="image/webp" srcset="/assets/img/sc/outrun-960.webp 960w, /assets/img/sc/outrun-1600.webp 1600w" sizes="(max-width: 1240px) 100vw, 1240px">
+<img src="/assets/img/sc/outrun-960.jpg" width="960" height="540" alt="" loading="lazy" decoding="async">
+</picture>
+<span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span>
+<span class="video-label">Play the Summit Climb trailer<small>Plays from YouTube</small></span>
 </a>
 </div>
-<p class="facts">Android <span>&middot;</span> Free with ads <span>&middot;</span> Optional in-app purchases</p>
 </div>
-<figure class="sc-art">
+</section>
+
+<section class="gallery" id="screens" aria-labelledby="screens-title">
+<div class="wrap">
+<h2 id="screens-title">Straight from the game.</h2>
+<ul class="shots">
+<li><a class="shot" href="/assets/img/sc/shot/s1-1600.jpg" data-full="/assets/img/sc/shot/s1-1600.webp" data-caption="Outrun the horde: zombies swarm the road behind an armoured truck">
 <picture>
-<source type="image/avif" srcset="/assets/img/summit-feature-480.avif 480w, /assets/img/summit-feature-768.avif 768w, /assets/img/summit-feature-1024.avif 1024w" sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 1000px) 45vw, 560px">
-<source type="image/webp" srcset="/assets/img/summit-feature-480.webp 480w, /assets/img/summit-feature-768.webp 768w, /assets/img/summit-feature-1024.webp 1024w" sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 1000px) 45vw, 560px">
-<img src="/assets/img/summit-feature-768.jpg" width="1024" height="500" alt="An orange off-roader with a roof-mounted gun leaps a broken desert bridge ahead of a zombie horde" fetchpriority="high" decoding="async">
+<source type="image/avif" srcset="/assets/img/sc/shot/s1-640.avif">
+<source type="image/webp" srcset="/assets/img/sc/shot/s1-640.webp">
+<img src="/assets/img/sc/shot/s1-640.jpg" width="640" height="360" alt="Outrun the horde: zombies swarm the road behind an armoured truck" loading="lazy" decoding="async">
 </picture>
-<figcaption>Desert Highway. Mind the gap.</figcaption>
-</figure>
-</section>
-<div class="numbers wrap">
-<div>
-<strong>16</strong>
-<span>vehicles in 4 classes</span>
-</div>
-<div>
-<strong>10</strong>
-<span>hand-built stages</span>
-</div>
-<div>
-<strong>10</strong>
-<span>Armory items</span>
-</div>
-<p>No sign-in.<br>No internet needed to play.</p>
-</div>
-<section class="section wrap" id="game">
-<div class="heading">
-<div>
-<p class="eyebrow">WHAT'S UNDER THE BONNET</p>
-<h2>Every run is a<br>race to the top.</h2>
-</div>
-<p>Bikes, cars, trucks and monster trucks,<br>each with its own grip, weight and engine note.</p>
-</div>
-<ul class="sc-features">
-<li>
-<span class="tag">REAL PHYSICS</span>
-<h3>Real cars. Real suspension.</h3>
-<p>16 vehicles in 4 classes, each with 4 tiers to unlock. Every upgrade, from engine and suspension to tyres and 4WD, is measurably better.</p>
-</li>
-<li>
-<span class="tag">TEN STAGES</span>
-<h3>From desert to the Moon.</h3>
-<p>Broken bridges on Desert Highway, icy Frostbite Pass, Bogwater mud pits, lava rock on Ash Volcano, low gravity on the Moon and, finally, The Summit.</p>
-</li>
-<li>
-<span class="tag">OUTRUN MODE</span>
-<h3>They never get tired.</h3>
-<p>Ram the walkers, chain combos and keep your fuel up. Wreck the car or let them catch you and the run is over.</p>
-</li>
-<li>
-<span class="tag">THE ARMORY</span>
-<h3>Ten pieces of kit.</h3>
-<p>Machine gun, scattergun, flamethrower, rocket pod, ram bar, spiked plating, shock cage, nitro, mine dropper and armour plate.</p>
-</li>
-<li>
-<span class="tag">YOU ARE THE DRIVER</span>
-<h3>Your face behind the wheel.</h3>
-<p>Pick a photo and your face rides in the driver's seat. The photo never leaves your phone.</p>
-</li>
-<li>
-<span class="tag">EVERY DAY</span>
-<h3>Missions and a league.</h3>
-<p>A seven-day login streak, three new missions every day, and a league of thirty rival drivers to climb on coins, distance and zombies.</p>
-</li>
+</a></li>
+<li><a class="shot" href="/assets/img/sc/shot/s2-1600.jpg" data-full="/assets/img/sc/shot/s2-1600.webp" data-caption="The vehicle garage: the orange Scout, with bikes, cars, trucks and monster trucks to choose from">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/shot/s2-640.avif">
+<source type="image/webp" srcset="/assets/img/sc/shot/s2-640.webp">
+<img src="/assets/img/sc/shot/s2-640.jpg" width="640" height="360" alt="The vehicle garage: the orange Scout, with bikes, cars, trucks and monster trucks to choose from" loading="lazy" decoding="async">
+</picture>
+</a></li>
+<li><a class="shot" href="/assets/img/sc/shot/s3-1600.jpg" data-full="/assets/img/sc/shot/s3-1600.webp" data-caption="Choosing a stage, from Meadow Run to Pine Ridge">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/shot/s3-640.avif">
+<source type="image/webp" srcset="/assets/img/sc/shot/s3-640.webp">
+<img src="/assets/img/sc/shot/s3-640.jpg" width="640" height="360" alt="Choosing a stage, from Meadow Run to Pine Ridge" loading="lazy" decoding="async">
+</picture>
+</a></li>
+<li><a class="shot" href="/assets/img/sc/shot/s4-1600.jpg" data-full="/assets/img/sc/shot/s4-1600.webp" data-caption="A buggy sails over a broken bridge on Desert Highway for a new record">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/shot/s4-640.avif">
+<source type="image/webp" srcset="/assets/img/sc/shot/s4-640.webp">
+<img src="/assets/img/sc/shot/s4-640.jpg" width="640" height="360" alt="A buggy sails over a broken bridge on Desert Highway for a new record" loading="lazy" decoding="async">
+</picture>
+</a></li>
+<li><a class="shot" href="/assets/img/sc/shot/s5-1600.jpg" data-full="/assets/img/sc/shot/s5-1600.webp" data-caption="Night falls and the headlights light the road">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/shot/s5-640.avif">
+<source type="image/webp" srcset="/assets/img/sc/shot/s5-640.webp">
+<img src="/assets/img/sc/shot/s5-640.jpg" width="640" height="360" alt="Night falls and the headlights light the road" loading="lazy" decoding="async">
+</picture>
+</a></li>
+<li><a class="shot" href="/assets/img/sc/shot/s6-1600.jpg" data-full="/assets/img/sc/shot/s6-1600.webp" data-caption="Upgrading the Goliath monster truck: engine, suspension, tyres, roll cage, flips and headlights">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/shot/s6-640.avif">
+<source type="image/webp" srcset="/assets/img/sc/shot/s6-640.webp">
+<img src="/assets/img/sc/shot/s6-640.jpg" width="640" height="360" alt="Upgrading the Goliath monster truck: engine, suspension, tyres, roll cage, flips and headlights" loading="lazy" decoding="async">
+</picture>
+</a></li>
+<li><a class="shot" href="/assets/img/sc/shot/s7-1600.jpg" data-full="/assets/img/sc/shot/s7-1600.webp" data-caption="The Armory: ten pieces of kit, with a weapon, body and gear loadout">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/shot/s7-640.avif">
+<source type="image/webp" srcset="/assets/img/sc/shot/s7-640.webp">
+<img src="/assets/img/sc/shot/s7-640.jpg" width="640" height="360" alt="The Armory: ten pieces of kit, with a weapon, body and gear loadout" loading="lazy" decoding="async">
+</picture>
+</a></li>
+<li><a class="shot" href="/assets/img/sc/shot/s8-1600.jpg" data-full="/assets/img/sc/shot/s8-1600.webp" data-caption="The league table of rival drivers">
+<picture>
+<source type="image/avif" srcset="/assets/img/sc/shot/s8-640.avif">
+<source type="image/webp" srcset="/assets/img/sc/shot/s8-640.webp">
+<img src="/assets/img/sc/shot/s8-640.jpg" width="640" height="360" alt="The league table of rival drivers" loading="lazy" decoding="async">
+</picture>
+</a></li>
 </ul>
-</section>
-<section class="section wrap" aria-label="Screenshots">
-<ul class="sc-shots" tabindex="0">
-<li><picture><source type="image/webp" srcset="/assets/img/shots/shot01-640.webp 640w, /assets/img/shots/shot01-960.webp 960w" sizes="(max-width: 600px) 85vw, 33vw"><img src="/assets/img/shots/shot01-640.jpg" width="640" height="360" alt="Outrun the horde: zombies swarm the road behind the car" loading="lazy" decoding="async"></picture></li>
-<li><picture><source type="image/webp" srcset="/assets/img/shots/shot02-640.webp 640w, /assets/img/shots/shot02-960.webp 960w" sizes="(max-width: 600px) 85vw, 33vw"><img src="/assets/img/shots/shot02-640.jpg" width="640" height="360" alt="The vehicle garage with 16 vehicles in four classes" loading="lazy" decoding="async"></picture></li>
-<li><picture><source type="image/webp" srcset="/assets/img/shots/shot03-640.webp 640w, /assets/img/shots/shot03-960.webp 960w" sizes="(max-width: 600px) 85vw, 33vw"><img src="/assets/img/shots/shot03-640.jpg" width="640" height="360" alt="Choosing between ten stages, from Meadow Run to Frostbite Pass" loading="lazy" decoding="async"></picture></li>
-<li><picture><source type="image/webp" srcset="/assets/img/shots/shot04-640.webp 640w, /assets/img/shots/shot04-960.webp 960w" sizes="(max-width: 600px) 85vw, 33vw"><img src="/assets/img/shots/shot04-640.jpg" width="640" height="360" alt="Jumping a broken bridge on Desert Highway" loading="lazy" decoding="async"></picture></li>
-<li><picture><source type="image/webp" srcset="/assets/img/shots/shot05-640.webp 640w, /assets/img/shots/shot05-960.webp 960w" sizes="(max-width: 600px) 85vw, 33vw"><img src="/assets/img/shots/shot05-640.jpg" width="640" height="360" alt="Night falls and the headlights light the road" loading="lazy" decoding="async"></picture></li>
-<li><picture><source type="image/webp" srcset="/assets/img/shots/shot06-640.webp 640w, /assets/img/shots/shot06-960.webp 960w" sizes="(max-width: 600px) 85vw, 33vw"><img src="/assets/img/shots/shot06-640.jpg" width="640" height="360" alt="Upgrading engine, suspension, tyres and more in the garage" loading="lazy" decoding="async"></picture></li>
-<li><picture><source type="image/webp" srcset="/assets/img/shots/shot07-640.webp 640w, /assets/img/shots/shot07-960.webp 960w" sizes="(max-width: 600px) 85vw, 33vw"><img src="/assets/img/shots/shot07-640.jpg" width="640" height="360" alt="The Armory with ten pieces of kit" loading="lazy" decoding="async"></picture></li>
-<li><picture><source type="image/webp" srcset="/assets/img/shots/shot08-640.webp 640w, /assets/img/shots/shot08-960.webp 960w" sizes="(max-width: 600px) 85vw, 33vw"><img src="/assets/img/shots/shot08-640.jpg" width="640" height="360" alt="The league table of rival drivers" loading="lazy" decoding="async"></picture></li>
-</ul>
-</section>
-<section class="calm wrap section">
-<div>
-<p class="eyebrow">GOOD TO KNOW</p>
-<h2>Play it your way.</h2>
 </div>
+</section>
+
+<section class="small-print" aria-labelledby="print-title">
+<div class="wrap print-grid">
+<h2 id="print-title">The small print is short.</h2>
 <ul>
 <li>No account or sign-in</li>
-<li>Plays offline</li>
+<li>Plays offline, no internet needed</li>
 <li>Blood can be switched off</li>
 <li>Reward videos are always optional</li>
 <li>Your driver photo stays on your phone</li>
+<li>Not directed at children under 13</li>
 </ul>
-</section>
-<section class="final wrap">
-<p class="eyebrow">THE HORDE IS WAITING</p>
-<h2>How far up<br>can you get?</h2>
-<a class="button" href="https://play.google.com/store/apps/details?id=com.gamestudio05.summitclimb&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding" rel="noopener noreferrer">Get it on Google Play &#8599;</a>
-<p>Android &middot; English &middot; Not directed at children under 13<br>Contains ads &middot; Optional in-app purchases</p>
-</section>
-<section class="sc-contact wrap" id="contact">
-<div>
-<p class="eyebrow">CONTACT</p>
-<h2>A question, a bug<br>or a little feedback?</h2>
-<p>We read every message. Tell us your phone model and what happened, and we'll take a look.</p>
-<p><a class="sc-mail" href="mailto:gamestudio05.team@gmail.com?subject=Summit%20Climb">gamestudio05.team@gmail.com</a></p>
 </div>
+</section>
+
+<section class="ticket-zone" aria-labelledby="ticket-title">
+<div class="wrap">
+<div class="ticket">
+<div class="ticket-main">
+<h2 id="ticket-title">How far up can you get?</h2>
+<p>Summit Climb: Outrun the Horde. Free on Android, in English.</p>
+</div>
+<div class="ticket-stub">
+<a class="btn btn-ink" href="https://play.google.com/store/apps/details?id=com.gamestudio05.summitclimb&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.8v16.4c0 .8.9 1.3 1.6.9l13.3-8.2c.6-.4.6-1.3 0-1.7L7.6 2.9C6.9 2.5 6 3 6 3.8z" fill="currentColor"/></svg><span>Get it on Google Play</span></a>
+<p>Contains ads <span aria-hidden="true">/</span> Optional in-app purchases</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contact-title">
+<div class="wrap contact-grid">
+<div>
+<h2 id="contact-title">A question, a bug or a little feedback?</h2>
+<p>We read every message. Tell us your phone model and what happened, and we'll take a look.</p>
+</div>
+<p class="contact-mail"><a href="mailto:gamestudio05.team@gmail.com?subject=Summit%20Climb">gamestudio05.team@gmail.com</a></p>
+</div>
+</section>
+
+</main>
+
+<div class="dock" data-dock hidden>
+<a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.gamestudio05.summitclimb&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.8v16.4c0 .8.9 1.3 1.6.9l13.3-8.2c.6-.4.6-1.3 0-1.7L7.6 2.9C6.9 2.5 6 3 6 3.8z" fill="currentColor"/></svg><span>Get it on Google Play</span></a>
+</div>
+
+<dialog class="lightbox" aria-label="Screenshot viewer" data-lightbox>
+<figure>
+<img alt="" width="1600" height="900" decoding="async">
+<figcaption></figcaption>
+</figure>
+<button type="button" class="lb-btn lb-prev" aria-label="Previous screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<button type="button" class="lb-btn lb-next" aria-label="Next screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<button type="button" class="lb-btn lb-close" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button>
+</dialog>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="footer-grid">
+<div>
+<p class="footer-studio">Game Studio 05</p>
+<p>Small studio, mobile games for Android. Summit Climb: Outrun the Horde and Bleedoku are published by Game Studio 05.</p>
+</div>
+<div>
+<h2>Summit Climb</h2>
 <ul>
+<li><a href="/summit-climb/">About the game</a></li>
 <li><a href="/summit-climb/privacy/">Privacy policy</a></li>
 <li><a href="/summit-climb/delete-data/">Delete your data</a></li>
-<li><a href="https://play.google.com/store/apps/details?id=com.gamestudio05.summitclimb" rel="noopener noreferrer">Summit Climb on Google Play &#8599;</a></li>
+<li><a href="https://play.google.com/store/apps/details?id=com.gamestudio05.summitclimb" rel="noopener noreferrer">Google Play<svg class="icon-ext" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3L3 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
 </ul>
-</section>
-</main>
-<footer>
-<div class="wrap">
-<div class="footer-top">
+</div>
 <div>
-<p>Summit Climb: Outrun the Horde is published by Game Studio 05.</p>
+<h2>Studio</h2>
+<ul>
+<li><a href="/">Game Studio 05</a></li>
+<li><a href="https://play.google.com/store/apps/details?id=com.bleedoku.game" rel="noopener noreferrer">Bleedoku on Google Play<svg class="icon-ext" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3L3 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+<li><a href="mailto:gamestudio05.team@gmail.com">gamestudio05.team@gmail.com</a></li>
+</ul>
 </div>
-<div class="footer-links">
-<a href="/summit-climb/privacy/">Privacy policy</a>
-<a href="/summit-climb/delete-data/">Delete your data</a>
-<a href="/">Game Studio 05</a>
-<a href="https://play.google.com/store/apps/details?id=com.bleedoku.game" rel="noopener noreferrer">Also from us: Bleedoku &#8599;</a>
 </div>
-</div>
-<div class="copyright">&copy; 2026 Game Studio 05 <span>Summit Climb: Outrun the Horde</span>
-</div>
+<div class="footer-base"><span>&copy; 2026 Game Studio 05</span><span>Google Play is a trademark of Google LLC.</span></div>
 </div>
 </footer>
 </body>
